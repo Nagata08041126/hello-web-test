@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hello! · 你好 · こんにちは</title>
+<meta name="description" content="日本語・中文のページ表示テスト / 网页显示测试">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef2ff;color:#18214b;font-family:system-ui,-apple-system,'PingFang SC','Hiragino Sans',sans-serif;line-height:1.7}main{max-width:720px;margin:auto;padding:32px 22px 60px}header{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:750}select{font:inherit;padding:9px;border:1px solid #b3bfe4;border-radius:12px;background:white;color:#18214b}h1{font-size:clamp(44px,10vw,76px);line-height:1.15;letter-spacing:-2px;margin:42px 0 20px}.intro{font-size:18px;max-width:540px}.card{background:white;border:1px solid #dbe1f5;border-radius:22px;padding:24px;margin-top:20px}h2{font-size:20px;margin:0 0 12px}.small{font-size:14px;color:#535e7d}button{background:#344cdb;color:white;border:0;border-radius:14px;padding:14px 24px;font:inherit;font-weight:700;cursor:pointer;min-height:48px}button:focus-visible,select:focus-visible{outline:3px solid #da6200;outline-offset:4px}img{width:100%;height:90px;border-radius:12px;display:block}#result{font-weight:700;min-height:28px;margin-bottom:0}footer{margin-top:26px;font-size:14px;color:#535e7d}textarea{width:100%;min-height:128px;font:inherit;font-size:14px;padding:12px;border:1px solid #b3bfe4;border-radius:12px;resize:vertical}
+</style>
+</head>
+<body><main>
+<header><span>HELLO / 接続テスト</span><select id="language" aria-label="Language / 言語 / 语言"><option value="zh">简体中文</option><option value="ja">日本語</option></select></header>
+<h1 id="title">你好，<br>看得到吗？</h1>
+<p class="intro" id="intro">这是一个简单的网页显示测试。请关闭 VPN，看看文字、色块和按钮是否正常。</p>
+<section class="card"><h2 id="textTitle">01 / 文字显示</h2><p lang="zh-CN">你好！今天也是美好的一天。</p><p lang="ja">こんにちは！今日もいい一日になりますように。</p><p class="small" id="textNote">能看到上面两行文字，就说明文字已显示。</p></section>
+<section class="card"><h2 id="imageTitle">02 / 图片显示</h2><img alt="蓝色、橙色、绿色 / 青・オレンジ・緑" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='90'%3E%3Cpath fill='%23344cdb' d='M0 0h200v90H0z'/%3E%3Cpath fill='%23ed853c' d='M200 0h200v90H200z'/%3E%3Cpath fill='%23248773' d='M400 0h200v90H400z'/%3E%3C/svg%3E"><p class="small" id="imageNote">应该能看到蓝、橙、绿三种色块。这张图片内嵌在页面中，不测试外部图片服务。</p></section>
+<section class="card"><h2 id="buttonTitle">03 / 按钮测试</h2><button id="test" type="button">点我试试</button><p id="result" role="status" aria-live="polite">等待点击</p><noscript>JavaScript 未开启 / JavaScriptが無効です。</noscript></section>
+<section class="card"><h2 id="replyTitle">把结果发给朋友</h2><p class="small" id="replyNote">长按下方文字即可复制，填写后发送给朋友。此页面不会自动发送任何信息。</p><textarea id="reply" aria-label="测试结果 / テスト結果" spellcheck="false">VPN：关闭 / 开启
+文字：正常 / 异常
+三色色块：正常 / 异常
+按钮：正常 / 异常
+打开方式：微信 / 手机浏览器
+网络：Wi-Fi / 手机流量</textarea></section>
+<footer id="footer">此测试仅反映本次访问的情况，不代表所有地区和网络都能访问。无需登录，不收集表单答案。</footer>
+</main><script>
+const content={zh:{title:'你好，<br>看得到吗？',intro:'这是一个简单的网页显示测试。请关闭 VPN，看看文字、色块和按钮是否正常。',textTitle:'01 / 文字显示',textNote:'能看到上面两行文字，就说明文字已显示。',imageTitle:'02 / 图片显示',imageNote:'应该能看到蓝、橙、绿三种色块。这张图片内嵌在页面中，不测试外部图片服务。',buttonTitle:'03 / 按钮测试',test:'点我试试',replyTitle:'把结果发给朋友',replyNote:'长按下方文字即可复制，填写后发送给朋友。此页面不会自动发送任何信息。',footer:'此测试仅反映本次访问的情况，不代表所有地区和网络都能访问。无需登录，不收集表单答案。',wait:'等待点击',ok:'成功！按钮可以正常使用。'},ja:{title:'こんにちは。<br>見えてる？',intro:'文字・画像・ボタンの表示を試す小さなページです。VPNをオフにして確認してください。',textTitle:'01 / 文字の表示',textNote:'上の日本語と中国語の2行が読めれば、文字の表示はOKです。',imageTitle:'02 / 画像の表示',imageNote:'青・オレンジ・緑の3色が表示されればOK。ページ内に埋め込んだ画像で、外部画像サービスの接続テストではありません。',buttonTitle:'03 / ボタンの動作',test:'押してみる',replyTitle:'結果を友達に送ろう',replyNote:'下の文章を長押しでコピーして、結果を書いて友達に送ってください。このページから自動送信はしません。',footer:'今回の接続だけを確認するテストです。すべての地域・回線での接続を保証するものではありません。ログイン不要。回答の収集はしません。',wait:'クリック待ち',ok:'成功！ボタンは正常に動いています。'}};
+let clicked=false;
+function render(){const lang=document.getElementById('language').value,t=content[lang];document.documentElement.lang=lang==='ja'?'ja':'zh-CN';for(const [key,value]of Object.entries(t)){const el=document.getElementById(key);if(el){if(key==='title')el.innerHTML=value;else el.textContent=value;}}document.getElementById('result').textContent=clicked?t.ok:t.wait;}
+document.getElementById('language').addEventListener('change',render);
+document.getElementById('test').addEventListener('click',()=>{clicked=true;render();});
+</script></body></html>
